@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+      pacifico: ['Pacifico', 'cursive'],
+    }
   },
   plugins: [],
 }
