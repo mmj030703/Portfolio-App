@@ -7,7 +7,7 @@ function AboutMe() {
 
     return (
         <section>
-            <div className="bg-slate-100 pt-32 pb-20">
+            <div className="pt-32 pb-20">
                 <Container>
                     <div className="flex justify-center gap-x-10">
                         <div>
