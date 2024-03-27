@@ -3,6 +3,7 @@ import Hero from './Hero';
 import Projects from './Projects';
 import Services from './Services';
 import Skills from './Skills';
+import Timeline from './Timeline';
 
 function Body() {
   return (
@@ -12,6 +13,7 @@ function Body() {
       <AboutMe />
       <Skills />
       <Projects />
+      <Timeline />
     </div>
   )
 }

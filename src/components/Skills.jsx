@@ -13,7 +13,6 @@ function Skills() {
     skills.map(skill => {
         const skillMeter = [];
         const skillCount = Math.round(skill.percentage / 10); 
-        console.log(skill.percentage, skillCount);
         for (let i = 1; i <= 10; i++) {
             skillMeter.push(<span key={Math.random()} className={`w-4 h-4 ${i <= skillCount ? 'bg-orange-500' : 'bg-white border-2 border-black'} block rounded-full hover:scale-110`}></span>);
         }
