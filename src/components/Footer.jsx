@@ -1,5 +1,3 @@
-import { faFacebookSquare, faInstagram, faLinkedinIn, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Container from "./Container";
 import { useSelector } from "react-redux";
 
@@ -8,47 +6,40 @@ function Footer() {
   const user = portfolioDetails?.user;
 
   return (
-    <footer className="bg-zinc-800 py-4">
-      <Container className="border-y-2 border-slate-500">
-        <div className="flex justify-between gap-x-10 text-white py-4">
-          <div className="flex justify-between flex-col gap-y-3">
-            <div className="flex flex-col justify-between gap-y-5">
-              <p className="font-bold text-2xl">Portfolio</p>
-              <p className="max-w-[500px]">tempore aspernatur minima illum hic dolore ex eum quas odit eius dignissimos delectus eligendi minus. Illum, natus!Ipsa provident soluta libero suscipit consequatur. Culpa soluta, obcaecati magni quo expedita accusantium unde necessitatibus!</p>
-            </div>
-            <div className="flex gap-x-3 text-3xl">
-              <FontAwesomeIcon icon={faLinkedinIn} />
-              <FontAwesomeIcon icon={faTwitter} />
-              <FontAwesomeIcon icon={faYoutube} />
-              <FontAwesomeIcon icon={faInstagram} />
-              <FontAwesomeIcon icon={faFacebookSquare} />
-            </div>
-          </div>
-          <div className="flex gap-x-10">
+    <footer className="bg-zinc-800 pt-12 font-poppins rounded-t-[2.5rem]">
+      <Container className="border-y-2 border-slate-600">
+        <div className="text-white py-14">
+          <div className="flex items-center justify-around gap-x-10">
+            <p className="font-bold text-4xl font-pacifico">Portfolio</p>
             <div>
-              <h3 className="text-lg text-orange-400 font-bold">Navigation</h3>
-              <ul className="w-max text-[15px] mt-5">
-                <li className="cursor-pointer">Home</li>
-                <li className="cursor-pointer">About Me</li>
-                <li className="cursor-pointer">Services</li>
-                <li className="cursor-pointer">Skills</li>
-                <li className="cursor-pointer">Projects</li>
-                <li className="cursor-pointer">Education & Experience</li>
-                <li className="cursor-pointer">Testinomial</li>
-                <li className="cursor-pointer">Contact</li>
+              <h3 className="text-2xl text-orange-400 font-bold">Navigation</h3>
+              <ul className="flex flex-col gap-y-1 w-max mt-5">
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">Home</li>
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">About Me</li>
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">Services</li>
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">Skills</li>
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">Projects</li>
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">Education & Experience</li>
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">Testinomial</li>
+                <li className="cursor-pointer hover:underline underline-offset-4 w-fit">Contact</li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-lg text-orange-400 font-bold">Contact</h3>
-              <ul className="w-max text-[15px] mt-5">
-                <li>{user?.about?.phoneNumber}</li>
-                <li className="cursor-pointer" title="Send Email">{user?.email}</li>
+            <div className="self-start">
+              <h3 className="text-2xl text-orange-400 font-bold">Contact</h3>
+              <ul className="flex flex-col gap-y-1 w-max mt-5">
+                <a href={`tel:${user?.about?.phoneNumber.slice(3)}`}>
+                  <li className="cursor-pointer">{user?.about?.phoneNumber}</li>
+                </a>
+                <a href={`mailto:${user?.email}`}>
+                  <li className="cursor-pointer" title="Send Email">{user?.email}</li>
+                </a>
               </ul>
             </div>
           </div>
-        </div>
-      </Container>
-    </footer>
+          </div>
+          </Container>
+          <p className="text-center text-slate-400 font-bold pt-4 pb-1">Made by Mayank M Jain</p>
+    </footer >
   )
 }
 
