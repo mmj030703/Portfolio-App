@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-function CarouselItemsCircles({ carouselItemsList, circleBgColor = 'bg-white', rowItemsNumber = 3 }) {
+function CarouselItemsCircles({ carouselItemsList, circleBgColor = 'bg-white', activeItemColor, rowItemsNumber = 3, carouselAtIndex }) {
 
     const carouselCircles = [];
-    for (let i = 1; i <= carouselItemsList?.length / rowItemsNumber; i++) {
-        carouselCircles.push(<span key={Math.random() * 10 + 1} className={`block w-4 h-4 rounded-full ${circleBgColor}`}></span>);
+    for (let i = 0; i < carouselItemsList?.length / rowItemsNumber; i++) {
+        carouselCircles.push(<span key={Math.random() * 10 + 1} className={`${carouselAtIndex === i ? activeItemColor + ' px-4' : circleBgColor} block w-4 h-4 rounded-full`}></span>);
     }
 
     return (
