@@ -4,7 +4,6 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import Projects from './pages/Projects.jsx'
 import { Provider } from 'react-redux'
 import appStore from './store/appStore.js'
 
@@ -16,10 +15,6 @@ const appRouter = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-      },
-      {
-        path: '/projects',
-        element: <Projects />,
       }
     ]
   }
